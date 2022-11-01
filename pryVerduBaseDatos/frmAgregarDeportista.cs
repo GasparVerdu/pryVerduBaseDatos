@@ -11,9 +11,9 @@ using System.Data.OleDb;
 
 namespace pryVerduBaseDatos
 {
-    public partial class frmDeportistas : Form
+    public partial class frmAgregarDeportista : Form
     {
-        public frmDeportistas()
+        public frmAgregarDeportista()
         {
             InitializeComponent();
         }

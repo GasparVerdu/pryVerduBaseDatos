@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmDeportistas.cs">
+    <Compile Include="frmAgregarDeportista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDeportistas.Designer.cs">
-      <DependentUpon>frmDeportistas.cs</DependentUpon>
+    <Compile Include="frmAgregarDeportista.Designer.cs">
+      <DependentUpon>frmAgregarDeportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarEntrenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarEntrenador.Designer.cs">
+      <DependentUpon>frmAgregarEntrenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaDeportistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaDeportistas.Designer.cs">
+      <DependentUpon>frmConsultaDeportistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaEntrenadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaEntrenadores.Designer.cs">
+      <DependentUpon>frmConsultaEntrenadores.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
@@ -60,8 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmDeportistas.resx">
-      <DependentUpon>frmDeportistas.cs</DependentUpon>
+    <EmbeddedResource Include="frmAgregarDeportista.resx">
+      <DependentUpon>frmAgregarDeportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarEntrenador.resx">
+      <DependentUpon>frmAgregarEntrenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaDeportistas.resx">
+      <DependentUpon>frmConsultaDeportistas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaEntrenadores.resx">
+      <DependentUpon>frmConsultaEntrenadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>

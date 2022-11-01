@@ -7,27 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace pryVerduBaseDatos
 {
-    public partial class frmInicio : Form
+    public partial class frmAgregarEntrenador : Form
     {
-
-       
-        public frmInicio()
+        public frmAgregarEntrenador()
         {
             InitializeComponent();
-        }
-
-        private void frmInicio_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
