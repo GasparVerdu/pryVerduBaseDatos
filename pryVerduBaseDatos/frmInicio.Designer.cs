@@ -35,6 +35,9 @@
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entrenadoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deportistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deportistasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -47,6 +50,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarToolStripMenuItem,
             this.consultarToolStripMenuItem,
+            this.actualizarToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -66,14 +70,14 @@
             // entrenadoresToolStripMenuItem
             // 
             this.entrenadoresToolStripMenuItem.Name = "entrenadoresToolStripMenuItem";
-            this.entrenadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entrenadoresToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.entrenadoresToolStripMenuItem.Text = "Entrenadores";
             this.entrenadoresToolStripMenuItem.Click += new System.EventHandler(this.entrenadoresToolStripMenuItem_Click);
             // 
             // deportistasToolStripMenuItem1
             // 
             this.deportistasToolStripMenuItem1.Name = "deportistasToolStripMenuItem1";
-            this.deportistasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deportistasToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
             this.deportistasToolStripMenuItem1.Text = "Deportistas";
             this.deportistasToolStripMenuItem1.Click += new System.EventHandler(this.deportistasToolStripMenuItem1_Click);
             // 
@@ -89,16 +93,39 @@
             // entrenadoresToolStripMenuItem1
             // 
             this.entrenadoresToolStripMenuItem1.Name = "entrenadoresToolStripMenuItem1";
-            this.entrenadoresToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.entrenadoresToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
             this.entrenadoresToolStripMenuItem1.Text = "Entrenadores";
             this.entrenadoresToolStripMenuItem1.Click += new System.EventHandler(this.entrenadoresToolStripMenuItem1_Click);
             // 
             // deportistasToolStripMenuItem
             // 
             this.deportistasToolStripMenuItem.Name = "deportistasToolStripMenuItem";
-            this.deportistasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deportistasToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.deportistasToolStripMenuItem.Text = "Deportistas";
             this.deportistasToolStripMenuItem.Click += new System.EventHandler(this.deportistasToolStripMenuItem_Click);
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            this.actualizarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enToolStripMenuItem,
+            this.deportistasToolStripMenuItem2});
+            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.actualizarToolStripMenuItem.Text = "Actualizar";
+            // 
+            // enToolStripMenuItem
+            // 
+            this.enToolStripMenuItem.Name = "enToolStripMenuItem";
+            this.enToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.enToolStripMenuItem.Text = "Entrenadores";
+            this.enToolStripMenuItem.Click += new System.EventHandler(this.enToolStripMenuItem_Click);
+            // 
+            // deportistasToolStripMenuItem2
+            // 
+            this.deportistasToolStripMenuItem2.Name = "deportistasToolStripMenuItem2";
+            this.deportistasToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.deportistasToolStripMenuItem2.Text = "Deportistas";
+            this.deportistasToolStripMenuItem2.Click += new System.EventHandler(this.deportistasToolStripMenuItem2_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -156,6 +183,9 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deportistasToolStripMenuItem2;
     }
 }
 

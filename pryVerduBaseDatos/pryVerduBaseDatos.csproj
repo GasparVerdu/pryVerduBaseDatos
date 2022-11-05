@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmActualizarDeportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarDeportista.Designer.cs">
+      <DependentUpon>frmActualizarDeportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarEntrenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarEntrenador.Designer.cs">
+      <DependentUpon>frmActualizarEntrenador.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarDeportista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmActualizarDeportista.resx">
+      <DependentUpon>frmActualizarDeportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarEntrenador.resx">
+      <DependentUpon>frmActualizarEntrenador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarDeportista.resx">
       <DependentUpon>frmAgregarDeportista.cs</DependentUpon>
     </EmbeddedResource>

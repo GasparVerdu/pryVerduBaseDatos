@@ -42,7 +42,7 @@ namespace pryVerduBaseDatos
 
         private void btnAgregarDeportista_Click(object sender, EventArgs e)
         {
-            //abre la base de datoss y carga los datos nuevos, carga por orden alfabetico porque la CP es el codigo
+            //abre la base de datoss y carga los datos nuevos
             try
             {
                 coneccionBaseDatos.Open();
