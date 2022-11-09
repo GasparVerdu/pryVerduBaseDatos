@@ -11,7 +11,7 @@ using System.Data.OleDb;
 
 namespace pryVerduBaseDatos
 {
-    public partial class frmActualizarDeportista : Form
+    public partial class frmEliminarDeportista : Form
     {
         OleDbConnection coneccionBaseDatos = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = DEPORTE.accdb");
         OleDbCommand comandoBD = new OleDbCommand();
@@ -20,7 +20,7 @@ namespace pryVerduBaseDatos
 
         //var para no escribirlo tantas veces
         string RutaBDDeporte = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = DEPORTE.accdb";
-        public frmActualizarDeportista()
+        public frmEliminarDeportista()
         {
             InitializeComponent();
         }
@@ -60,22 +60,22 @@ namespace pryVerduBaseDatos
                     MessageBox.Show("No existe el codigo ingresado");
                 }
                 coneccionBaseDatos.Close();
-                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
 
-                txtApellido.Enabled = true;
-                txtNombre.Enabled = true;
-                txtDireccion.Enabled = true;
-                txtTelefono.Enabled = true;
-                txtEdad.Enabled = true;
-                cboDeporte.Enabled = true;
+                //txtApellido.Enabled = true;
+                //txtNombre.Enabled = true;
+                //txtDireccion.Enabled = true;
+                //txtTelefono.Enabled = true;
+                //txtEdad.Enabled = true;
+                //cboDeporte.Enabled = true;
             }
 
         }
 
-        private void frmActualizarDeportista_Load(object sender, EventArgs e)
+        private void frmEliminarDeportista_Load(object sender, EventArgs e)
         {
-            //desactiva el boton modificar
-            btnModificar.Enabled = false;
+            //desactiva los botones
+            btnEliminar.Enabled = false;
 
             txtApellido.Enabled = false;
             txtNombre.Enabled = false;
@@ -89,80 +89,61 @@ namespace pryVerduBaseDatos
             {
                 coneccionBaseDatos = new OleDbConnection(RutaBDDeporte);
                 coneccionBaseDatos.Open();
-                EstadoConeccionDepModificar.BackColor = Color.Green;
-                ModificarDeportistasTool.Text = "Conectado correctamente" + " " + DateTime.Now;
+                EstadoConeccionDepEliminar.BackColor = Color.Green;
+                EliminarDeportistasTool.Text = "Conectado correctamente" + " " + DateTime.Now;
             }
             catch (Exception mensajito)
             {
-                EstadoConeccionDepModificar.Text = mensajito.Message;
-                ModificarDeportistasTool.BackColor = Color.Red;
+                EstadoConeccionDepEliminar.Text = mensajito.Message;
+                EliminarDeportistasTool.BackColor = Color.Red;
                 //throw;
             }
             coneccionBaseDatos.Close();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string Codigo, Nombre, Apellido, Direccion, Deporte;
+            string Codigo = txtCodigoDeportista.Text;
 
+            //try
+            //{
+            //   coneccionBaseDatos.Open();
+            //   comandoBD.Connection = coneccionBaseDatos;
+
+            //   comandoBD.CommandText = "DELETE * FROM DEPORTISTA WHERE [CODIGO DEPORTISTA] = " + CODIGO;
+            //   //executeNonQuery para la sentencia SQL del oledbCommand, ejecuta el comando
+            //   comandoBD.ExecuteNonQuery();
+            //   coneccionBaseDatos.Close();
+            //   MessageBox.Show("Datos eliminados");
+            //}
+            //catch (Exception mensajito)
+            //{
+            //   MessageBox.Show(mensajito.Message);
+            //   //throw;
+            //}
+            //coneccionBaseDatos.Close();
             if (txtCodigoDeportista.Text != "")
             {
-                int Telefono, Edad;
 
                 Codigo = txtCodigoDeportista.Text;
-                Nombre = txtNombre.Text;
-                Apellido = txtApellido.Text;
-                Direccion = txtDireccion.Text;
-                Deporte = cboDeporte.Text;
-
-                Telefono = Convert.ToInt32(txtTelefono.Text);
-                Edad = Convert.ToInt32(txtEdad.Text);
 
                 coneccionBaseDatos = new OleDbConnection(RutaBDDeporte);
                 coneccionBaseDatos.Open();
                 comandoBD.Connection = coneccionBaseDatos;
                 //este using crea un nuevo comando 
                 using (System.Data.OleDb.OleDbCommand commandUpdate = new System.Data.OleDb.OleDbCommand(
-                        "UPDATE DEPORTISTA SET NOMBRE=@NOMBRE, APELLIDO=@APELLIDO, DIRECCION=@DIRECCION," +
-                        "TELEFONO=@TELEFONO, EDAD=@EDAD, DEPORTE=@DEPORTE WHERE [CODIGO DEPORTISTA]=@Codigo", coneccionBaseDatos))
+                        "DELETE * FROM DEPORTISTA WHERE [CODIGO DEPORTISTA]=@Codigo", coneccionBaseDatos))
                 {
                     //actualiza en los respectivos campos los datos
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@NOMBRE", Nombre));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@APELLIDO", Apellido));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@DIRECCION", Direccion));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@TELEFONO", Telefono));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@EDAD", Edad));
-                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@DEPORTE", Deporte));
                     commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@Codigo", Codigo));
                     commandUpdate.ExecuteNonQuery();
                 }
-                MessageBox.Show("Datos Actualizados");
+                MessageBox.Show("Deportista eliminado");
             }
             else
             {
-                MessageBox.Show("Codigo invalido");
+                MessageBox.Show("Ingrese un codigo");
             }
-
         }
-        //try
-        //{
-        //    coneccionBaseDatos.Open();
-        //    comandoBD.Connection = coneccionBaseDatos;
-        //    //comandoBD.CommandType = CommandType.Text;
-        //    comandoBD.CommandText = "UPDATE DEPORTISTA SET NOMBRE= '" + Nombre + "'," + "APELLIDO='" + Apellido
-        //    + "'," + "DIRECCION ='" + Direccion + "'," + "TELEFONO='" + Telefono + "'," + "EDAD=" + Edad + "," +
-        //    "DEPORTE='" + Deporte + "'WHERE [CODIGO DEPORTISTA] =" + Codigo;
-        //    comandoBD.ExecuteNonQuery();
-
-        //    coneccionBaseDatos.Close();
-
-        //    MessageBox.Show("Datos cargados");
-        //}
-        //catch (Exception mensajito)
-        //{
-        //    MessageBox.Show(mensajito.Message);
-        //    //throw;
-        //}
-        //coneccionBaseDatos.Close();
     }
 }

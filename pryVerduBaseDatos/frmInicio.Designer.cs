@@ -38,6 +38,9 @@
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deportistasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deportistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entenadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -51,12 +54,14 @@
             this.registrarToolStripMenuItem,
             this.consultarToolStripMenuItem,
             this.actualizarToolStripMenuItem,
+            this.eliminarToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // registrarToolStripMenuItem
             // 
@@ -116,16 +121,39 @@
             // enToolStripMenuItem
             // 
             this.enToolStripMenuItem.Name = "enToolStripMenuItem";
-            this.enToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.enToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.enToolStripMenuItem.Text = "Entrenadores";
             this.enToolStripMenuItem.Click += new System.EventHandler(this.enToolStripMenuItem_Click);
             // 
             // deportistasToolStripMenuItem2
             // 
             this.deportistasToolStripMenuItem2.Name = "deportistasToolStripMenuItem2";
-            this.deportistasToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.deportistasToolStripMenuItem2.Size = new System.Drawing.Size(143, 22);
             this.deportistasToolStripMenuItem2.Text = "Deportistas";
             this.deportistasToolStripMenuItem2.Click += new System.EventHandler(this.deportistasToolStripMenuItem2_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deportistaToolStripMenuItem,
+            this.entenadorToolStripMenuItem});
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // deportistaToolStripMenuItem
+            // 
+            this.deportistaToolStripMenuItem.Name = "deportistaToolStripMenuItem";
+            this.deportistaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deportistaToolStripMenuItem.Text = "Deportista";
+            this.deportistaToolStripMenuItem.Click += new System.EventHandler(this.deportistaToolStripMenuItem_Click);
+            // 
+            // entenadorToolStripMenuItem
+            // 
+            this.entenadorToolStripMenuItem.Name = "entenadorToolStripMenuItem";
+            this.entenadorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entenadorToolStripMenuItem.Text = "Entrenador";
+            this.entenadorToolStripMenuItem.Click += new System.EventHandler(this.entenadorToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -186,6 +214,9 @@
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deportistasToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deportistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entenadorToolStripMenuItem;
     }
 }
 

@@ -86,5 +86,22 @@ namespace pryVerduBaseDatos
             frmActualizarDeportista frmActualizarDeportista = new frmActualizarDeportista();
             frmActualizarDeportista.ShowDialog();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void deportistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEliminarDeportista deportista = new frmEliminarDeportista();
+            deportista.ShowDialog();
+        }
+
+        private void entenadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEliminarEntrenador Entrenador = new frmEliminarEntrenador();
+            Entrenador.ShowDialog();
+        }
     }
 }

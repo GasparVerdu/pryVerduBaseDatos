@@ -82,6 +82,18 @@
     <Compile Include="frmConsultaEntrenadores.Designer.cs">
       <DependentUpon>frmConsultaEntrenadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEliminarEntrenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminarEntrenador.Designer.cs">
+      <DependentUpon>frmEliminarEntrenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminarDeportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminarDeportista.Designer.cs">
+      <DependentUpon>frmEliminarDeportista.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaEntrenadores.resx">
       <DependentUpon>frmConsultaEntrenadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminarEntrenador.resx">
+      <DependentUpon>frmEliminarEntrenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminarDeportista.resx">
+      <DependentUpon>frmEliminarDeportista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
