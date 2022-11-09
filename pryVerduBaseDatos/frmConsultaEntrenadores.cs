@@ -43,7 +43,7 @@ namespace pryVerduBaseDatos
 
                 while (LectorBD.Read())
                 {
-                    dgvEntrenadores.Rows.Add(LectorBD["CODIGO DEPORTISTA"].ToString(), LectorBD["NOMBRE"], LectorBD["APELLIDO"], LectorBD["DIRECCION"], LectorBD["PROVINCIA"], LectorBD["DEPORTE"]);
+                    dgvEntrenadores.Rows.Add(LectorBD["CODIGO ENTRENADOR"].ToString(), LectorBD["NOMBRE"], LectorBD["APELLIDO"], LectorBD["DIRECCION"], LectorBD["PROVINCIA"], LectorBD["DEPORTE"]);
                 }
             }
             catch (Exception mensajito)

@@ -48,7 +48,7 @@ namespace pryVerduBaseDatos
                 coneccionBaseDatos.Open();
                 comandoBD.Connection = coneccionBaseDatos;
 
-                comandoBD.CommandText = "INSERT INTO ENTRENADORES ([CODIGO DEPORTISTA], [NOMBRE], [APELLIDO], [DIRECCION], [PROVINCIA], [DEPORTE])" +
+                comandoBD.CommandText = "INSERT INTO ENTRENADORES ([CODIGO ENTRENADOR], [NOMBRE], [APELLIDO], [DIRECCION], [PROVINCIA], [DEPORTE])" +
                     "VALUES ( '" + txtCodigoEntrenador.Text + "','" + txtNombreEntrenador.Text + "','" + txtApellidoEntrenador.Text + "','" +
                     txtDireccionEntrenador.Text + "','" + txtProvinciaEntrenador.Text + "','" + cboDeporteEntrenador.Text + "')";
                 //executeNonQuery para la sentencia SQL del oledbCommand

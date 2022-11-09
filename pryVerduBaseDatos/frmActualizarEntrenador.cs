@@ -25,9 +25,24 @@ namespace pryVerduBaseDatos
             InitializeComponent();
         }
 
-        private void btnMostrarDatos_Click(object sender, EventArgs e)
+        private void frmActualizarEntrenador_Load(object sender, EventArgs e)
         {
-            //desactiva el boton modificar
+            //conectar la base de datos 
+            try
+            {
+                coneccionBaseDatos = new OleDbConnection(RutaBDDeporte);
+                coneccionBaseDatos.Open();
+                EstadoConeccionEntrModificar.BackColor = Color.Green;
+                ModificarEntrenadoresTool.Text = "Conectado correctamente" + " " + DateTime.Now;
+            }
+            catch (Exception mensajito)
+            {
+                EstadoConeccionEntrModificar.Text = mensajito.Message;
+                ModificarEntrenadoresTool.BackColor = Color.Red;
+                //throw;
+            }
+            coneccionBaseDatos.Close();
+
             btnModificar.Enabled = false;
 
             txtApellido.Enabled = false;
@@ -35,6 +50,9 @@ namespace pryVerduBaseDatos
             txtDireccion.Enabled = false;
             txtProvincia.Enabled = false;
             cboDeporte.Enabled = false;
+        }
+        private void btnMostrarDatos_Click(object sender, EventArgs e)
+        {
 
             if (txtCodigoEntrenador.Text != "")
             {
@@ -75,23 +93,46 @@ namespace pryVerduBaseDatos
                 cboDeporte.Enabled = true;
             }
         }
-        private void frmActualizarEntrenador_Load(object sender, EventArgs e)
+
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            //conectar la base de datos 
-            try
+
+            string Codigo, Nombre, Apellido, Direccion, Deporte, Provincia;
+
+            if (txtCodigoEntrenador.Text != "")
             {
+                Codigo = txtCodigoEntrenador.Text;
+                Nombre = txtNombre.Text;
+                Apellido = txtApellido.Text;
+                Direccion = txtDireccion.Text;
+                Deporte = cboDeporte.Text;
+
+                Provincia = txtProvincia.Text;
+
                 coneccionBaseDatos = new OleDbConnection(RutaBDDeporte);
                 coneccionBaseDatos.Open();
-                EstadoConeccionEntrModificar.BackColor = Color.Green;
-                ModificarEntrenadoresTool.Text = "Conectado correctamente" + " " + DateTime.Now;
+                comandoBD.Connection = coneccionBaseDatos;
+                using (System.Data.OleDb.OleDbCommand commandUpdate = new System.Data.OleDb.OleDbCommand(
+                    "UPDATE ENTRENADORES SET NOMBRE=@NOMBRE, APELLIDO=@APELLIDO, DIRECCION=@DIRECCION," +
+                    "PROVINCIA=@PROVINCIA, DEPORTE=@DEPORTE WHERE [CODIGO ENTRENADOR]=@Codigo", coneccionBaseDatos))
+                {
+                    //actualiza en los respectivos campos los datos
+                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@NOMBRE", Nombre));
+                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@APELLIDO", Apellido));
+                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@DIRECCION", Direccion));
+                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@PROVINCIA", Provincia));
+                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@DEPORTE", Deporte));
+                    commandUpdate.Parameters.Add(new System.Data.OleDb.OleDbParameter("@Codigo", Codigo));
+                    commandUpdate.ExecuteNonQuery();
+                }
+                MessageBox.Show("Actualizado con exito!!");
+                coneccionBaseDatos.Close();
             }
-            catch (Exception mensajito)
+            else
             {
-                EstadoConeccionEntrModificar.Text = mensajito.Message;
-                ModificarEntrenadoresTool.BackColor = Color.Red;
-                //throw;
-            }
-            coneccionBaseDatos.Close();
+                MessageBox.Show("Codigo invalido");
         }
+
     }
+}
 }
